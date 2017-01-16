@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GBI-Lw-Xvb">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11077"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="lOg-Fa-g9h">
+            <objects>
+                <controller identifier="home" title="Home" id="GBI-Lw-Xvb" customClass="InterfaceController" customModule="BasicWatchKitApp_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Home" id="Lhq-IF-n8O"/>
+                        <imageView height="127" alignment="center" verticalAlignment="center" id="hMK-dA-Z2c"/>
+                    </items>
+                    <connections>
+                        <outlet property="animatedImage" destination="hMK-dA-Z2c" id="ym6-ze-Y34"/>
+                        <segue destination="AgC-eL-Hgc" kind="relationship" relationship="nextPage" id="0PT-BR-2LY"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-66" y="345"/>
+        </scene>
+        <!--First-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="first" title="First" hidesWhenLoading="NO" id="AgC-eL-Hgc" customClass="FirstInterfaceController" customModule="BasicWatchKitApp_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="First Screen" textAlignment="center" id="B7t-K9-c4Y"/>
+                        <table alignment="left" id="YvC-Vt-okZ">
+                            <items>
+                                <tableRow identifier="CustomTableRowController" id="BUX-df-jG7" customClass="CustomTableRowController" customModule="BasicWatchKitApp_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="38" alignment="left" id="BAX-7h-zwl">
+                                        <items>
+                                            <imageView width="36" height="36" alignment="left" id="M7c-ul-IIz"/>
+                                            <label alignment="left" verticalAlignment="center" text="Row name 1" id="hDS-zV-YBC"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="cellImageName" destination="M7c-ul-IIz" id="Foz-5h-wMN"/>
+                                        <outlet property="rownameLabel" destination="hDS-zV-YBC" id="Sw3-SF-kum"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="customTableView" destination="YvC-Vt-okZ" id="ddc-D5-gXf"/>
+                        <segue destination="nYk-N5-XKX" kind="relationship" relationship="nextPage" id="Yaf-KV-0Lv"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="160" y="345"/>
+        </scene>
+        <!--Second-->
+        <scene sceneID="xx0-lC-pLk">
+            <objects>
+                <controller identifier="second" title="Second" hidesWhenLoading="NO" id="nYk-N5-XKX" customClass="SecondInterfaceController" customModule="BasicWatchKitApp_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Second Screen" id="004-UT-zI6"/>
+                    </items>
+                    <connections>
+                        <segue destination="nmE-TX-hV3" kind="relationship" relationship="nextPage" id="WUX-wp-11K"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="380" y="345"/>
+        </scene>
+        <!--Third-->
+        <scene sceneID="7AE-Mu-H0K">
+            <objects>
+                <controller identifier="third" title="Third" hidesWhenLoading="NO" id="nmE-TX-hV3">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Third Screen" id="kaM-zA-o92"/>
+                    </items>
+                    <connections>
+                        <segue destination="oyv-mr-m1k" kind="relationship" relationship="nextPage" id="UZb-tp-tRP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="593" y="345"/>
+        </scene>
+        <!--Fourth-->
+        <scene sceneID="FtG-CL-Ee7">
+            <objects>
+                <controller identifier="fourth" title="Fourth" hidesWhenLoading="NO" id="oyv-mr-m1k">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Fourth Screen" id="Ooi-hC-2dx"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="818" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="JkZ-pv-c6Q" kind="relationship" relationship="dynamicNotificationInterface" id="sae-bR-vm3"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="206" y="775"/>
+        </scene>
+        <!--Dynamic Notification Interface Controller-->
+        <scene sceneID="TPZ-uI-vAW">
+            <objects>
+                <controller id="JkZ-pv-c6Q"/>
+            </objects>
+            <point key="canvasLocation" x="442" y="775"/>
+        </scene>
+    </scenes>
+</document>
